@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="433.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.edu.ncu.yang.controller.AdmAction">
+   <children>
+      <ImageView fitHeight="645.0" fitWidth="671.0" layoutX="4.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/桌面.jpg" />
+         </image>
+      </ImageView>
+      <TabPane layoutX="10.0" layoutY="17.0" prefHeight="425.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="查看全部课程">
+               <content>
+                  <TableView fx:id="tableView" prefHeight="376.0" prefWidth="644.0">
+                     <columns>
+                        <TableColumn fx:id="courseId" prefWidth="75.0" text="课程编号" />
+                        <TableColumn fx:id="courseName" prefWidth="75.0" text="课程名" />
+                        <TableColumn fx:id="courseTeacher" prefWidth="75.0" text="授课老师" />
+                        <TableColumn fx:id="courseCredit" prefWidth="75.0" text="课程学分" />
+                        <TableColumn fx:id="classHours" prefWidth="75.0" text="学时" />
+                        <TableColumn fx:id="openingTerm" prefWidth="75.0" text="开课学期" />
+                        <TableColumn fx:id="courseNature" prefWidth="75.0" text="课程性质" />
+                        <TableColumn fx:id="classNumber" prefWidth="65.99993896484375" text="课程人数" />
+                        <TableColumn  prefWidth="49.3333740234375">
+                           <graphic>
+                              <Button mnemonicParsing="false" onAction="#showAllCourse" text="刷新" />
+                           </graphic>
+                        </TableColumn>
+                     </columns>
+                  </TableView>
+               </content>
+            </Tab>
+            <Tab text="添加课程">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="71.0" layoutY="48.0" text="课程编号：">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="71.0" layoutY="83.0" text="授课老师：">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="103.0" layoutY="124.0" text="学时：">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="103.0" layoutY="159.0" text="学分：">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="71.0" layoutY="198.0" prefHeight="22.0" prefWidth="80.0" text="开课学期：">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="63.0" layoutY="238.0" text="课程性质：">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="idTxt" layoutX="175.0" layoutY="47.0" />
+                        <TextField fx:id="teacherTxt" layoutX="175.0" layoutY="83.0" />
+                        <TextField fx:id="hoursTxt" layoutX="175.0" layoutY="124.0" />
+                        <TextField fx:id="creditTxt" layoutX="175.0" layoutY="159.0" />
+                        <TextField fx:id="termTxt" layoutX="175.0" layoutY="198.0" />
+                        <TextField fx:id="natureTxt" layoutX="175.0" layoutY="237.0" />
+                        <Button layoutX="185.0" layoutY="321.0" mnemonicParsing="false" onAction="#addCourse" text="添加课程">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="nameTxt" layoutX="175.0" layoutY="277.0" />
+                        <Label layoutX="79.0" layoutY="277.0" text="课程名：">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab text="删除课程">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="434.0" layoutY="50.0" mnemonicParsing="false" onAction="#delCourse" text="删除" />
+                        <Label layoutX="35.0" layoutY="50.0" text="输入课程编号：">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="delTxt" layoutX="159.0" layoutY="49.0" />
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
